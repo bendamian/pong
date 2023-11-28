@@ -1,2 +1,10 @@
+from turtle import Screen
 
-print(f"pong {2+1}")
+screen = Screen()
+screen.setup(800, 600)
+screen.bgcolor("black")
+screen.title("Pong game")
+
+
+screen.exitonclick()
+
