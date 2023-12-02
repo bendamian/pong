@@ -1,7 +1,7 @@
 from turtle import Turtle
 
 
-class ScoreBord(Turtle):
+class ScoreBoard(Turtle):
     def __init__(self):
         super().__init__()
         self.color("white")
@@ -9,5 +9,19 @@ class ScoreBord(Turtle):
         self.hideturtle()
         self.l_score = 0
         self.r_score = 0
-        self.goto(-100,200)
-        self.write(self.l_score, align='centre', font=("Calibre", 20,  "bold"))
+        self.update_scoreboard()
+
+    def update_scoreboard(self):
+        self.clear()
+        self.goto(-100, 200)
+        self.write(self.l_score, align='center', font=("Calibre", 20, "bold"))
+        self.goto(100, 200)
+        self.write(self.r_score, align='center', font=("Calibre", 20, "bold"))
+
+    def l_points(self):
+        self.l_score += 1
+        self.update_scoreboard()
+
+    def r_points(self):
+        self.r_score += 1
+        self.update_scoreboard()
